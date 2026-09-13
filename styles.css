@@ -585,9 +585,7 @@ h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -0.04em; }
   .gallery-columns { column-count: 2; }
   .about-hero,
   .split,
-  .detail-hero,
-  .project-card { grid-template-columns: 1fr; }
-  .project-card-image { min-height: 220px; }
+  .detail-hero { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
 
@@ -618,10 +616,28 @@ h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -0.04em; }
   .key-grid { grid-template-columns: 1fr; gap: 12px; }
   .info-card,
   .contact-card,
-  .project-card,
   .media-card,
   .sheet-card { padding: 14px; }
-  .project-card-image { min-height: 180px; }
+  .project-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card-image {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+  .project-card-body {
+    padding: 16px;
+    gap: 8px;
+  }
+  .project-card-body h2,
+  .project-card-body h3 {
+    font-size: 20px;
+    line-height: 1.15;
+  }
+  .button-inline { width: 100%; margin-top: 4px; }
   .gallery-columns { column-count: 1; }
   .footer { flex-direction: column; gap: 8px; }
 }
