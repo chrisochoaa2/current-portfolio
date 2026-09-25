@@ -29,35 +29,13 @@
         <p class="eyebrow">Rocket propulsion • additive manufacturing</p>
         <h1 class="page-title">Additively Manufactured Regeneratively Cooled Rocket Nozzle</h1>
         <p class="section-intro">
-          I designed and manufactured a Ti-6Al-4V rocket nozzle in nTop / nTopology with internal BCC lattice
-          cooling geometry and a field-driven external isogrid reinforcement structure.
+          This project explored lattice structures in a regeneratively cooled rocket nozzle manufactured with metal additive manufacturing.
         </p>
       </div>
       <figure class="detail-hero-image-wrap project-hero-image-wrap">
-        <img class="detail-hero-image" src="images/nozzle/nozzle-01.png" alt="3D-printed rocket nozzle prototype with lattice reinforcement" loading="eager" decoding="async" />
+        <img class="detail-hero-image" src="images/nozzle/nozzle-01.png" alt="Photograph of the additively manufactured rocket nozzle prototype" loading="eager" decoding="async" />
       </figure>
     </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Quick summary</p>
-        <h2>What the project was about.</h2>
-      </div>
-      <div class="split summary-split">
-        <p>
-          This project focused on the design, analysis, and metal additive manufacturing of a regeneratively
-          cooled rocket nozzle. The geometry was modeled in nTop / nTopology to support the internal cooling
-          channels and the external reinforcement features that would have been difficult to create in
-          traditional CAD.
-        </p>
-        <p>
-          The goal was to explore how additive manufacturing can enable a lightweight rocket nozzle with
-          integrated thermal management and structural reinforcement. The final part was printed in Ti-6Al-4V on a
-          GE M2 Series metal 3D printer.
-        </p>
-      </div>
-    </section>
-
     <section class="section">
       <div class="section-heading">
         <p class="eyebrow">Basic facts</p>
@@ -65,7 +43,7 @@
       </div>
       <div class="fact-grid">
         <div class="fact-card"><span class="fact-label">Software</span><span class="fact-value">nTop / nTopology</span></div>
-        <div class="fact-card"><span class="fact-label">Cooling concept</span><span class="fact-value">Regenerative cooling with internal BCC lattice geometry</span></div>
+        <div class="fact-card"><span class="fact-label">Cooling concept</span><span class="fact-value">Additive-only cooling channels with BCC lattice geometry</span></div>
         <div class="fact-card"><span class="fact-label">Reinforcement</span><span class="fact-value">Field-driven isogrid with varying rib thickness and width</span></div>
         <div class="fact-card"><span class="fact-label">Material</span><span class="fact-value">Ti-6Al-4V</span></div>
         <div class="fact-card"><span class="fact-label">Process</span><span class="fact-value">Laser powder bed fusion metal additive manufacturing</span></div>
@@ -75,45 +53,96 @@
 
     <section class="section">
       <div class="section-heading">
-        <p class="eyebrow">Project images</p>
-        <h2>Gallery views from the nozzle work.</h2>
+        <p class="eyebrow">Design development</p>
+        <h2>From rectangular cooling channels to a BCC lattice cooling core.</h2>
       </div>
       <div class="gallery-grid">
         <figure class="media-card">
-          <a href="images/nozzle/nozzle-01.png">
-            <img src="images/nozzle/nozzle-01.png" alt="3D-printed rocket nozzle prototype with lattice reinforcement" loading="lazy" decoding="async" />
-          </a>
+          <img src="images/nozzle/nozzle-section-render.png" alt="Gray CAD cross-section of a flared duct or nozzle with a slotted rim and narrowing outlet" loading="lazy" decoding="async" />
+          <figcaption>Conventional nozzle with rectangular cooling channels.</figcaption>
         </figure>
         <figure class="media-card">
-          <a href="images/nozzle/nozzle-02.png">
-            <img src="images/nozzle/nozzle-02.png" alt="Black lattice-structured nozzle prototype" loading="lazy" decoding="async" />
-          </a>
+          <img src="images/nozzle/nozzle-wireframe-lattice.png" alt="Abstract gray wireframe hourglass-shaped lattice on a black background" loading="lazy" decoding="async" />
+          <figcaption>BCC lattice cooling core used in the redesigned nozzle.</figcaption>
+        </figure>
+      </div>
+      <p class="section-intro">
+        The report shows that BCC lattices improve heat transfer and distribute load more evenly, which helps reduce damage to the inner wall. That makes the lattice approach a strong additive option, even with the pressure-drop tradeoff.
+      </p>
+    </section>
+
+    <section class="section split">
+      <div class="stack">
+        <p class="eyebrow">2. Isogrid reinforcement</p>
+        <h2>Parametric field equations vary the isogrid thickness along the nozzle axis.</h2>
+        <p>
+          The field-view image shows how the outer isogrid changes thickness by location. I used field-driven
+          equations so the rib thickness could respond to pressure along the axis of the nozzle instead of staying
+          uniform everywhere.
+        </p>
+        <p>
+          That variation helps the shell manage hoop stress more efficiently by thickening reinforcement where the
+          loading is higher and relaxing it where the load is lower.
+        </p>
+      </div>
+      <figure class="media-card">
+        <img src="images/nozzle/nozzle-field-view.png" alt="Gray hourglass-shaped isogrid lattice structure on a rainbow scalar field background" loading="lazy" decoding="async" />
+        <figcaption>Field-driven isogrid visualization used to tune thickness by location and load.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section split">
+      <figure class="media-card">
+        <img src="images/nozzle/nozzle-fea-pintegral.png" alt="3D scientific visualization of a funnel-shaped mesh model with a blue-to-red false-color scale, axis labels, and a color bar labeled P Integral" loading="lazy" decoding="async" />
+        <figcaption>P integral build-process simulation used to assess printability.</figcaption>
+      </figure>
+      <div class="stack">
+        <p class="eyebrow">3. Build process simulation</p>
+        <h2>The simulation checks printability before the nozzle is built.</h2>
+        <p>
+          This is a build-process simulation, not a service-load FEA. In LPBF, geometry, overhangs, thermal effects,
+          residual stress, and distortion can all create print failure risk. The P integral helps assess that risk by
+          relating the local von Mises stress field to the surrounding area and volume, making it easier to spot regions that
+          may warp, crack, separate from the build plate, or fail during the build.
+        </p>
+        <p>
+          For this nozzle, the results looked acceptable and supported moving the design forward to manufacturing.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">As printed</p>
+        <h2>Back view of the printed nozzle prototype.</h2>
+      </div>
+      <figure class="media-card">
+        <img src="images/nozzle/nozzle-02.png" alt="Back view of the additively manufactured rocket nozzle after printing" loading="lazy" decoding="async" />
+        <figcaption>Printed back view of the nozzle prototype.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Reference geometry</p>
+        <h2>Dimensioned profile used to anchor the CAD model.</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="media-card">
+          <img src="images/nozzle/nozzle-concept-render.png" alt="Lattice-reinforced nozzle concept render with a main nozzle view and a structural detail inset" loading="lazy" decoding="async" />
+          <figcaption>Concept render showing the overall nozzle form.</figcaption>
+        </figure>
+        <figure class="media-card">
+          <img src="images/nozzle/nozzle-dimensioned-profile.png" alt="Technical drawing of a curved tapered mechanical part with dimensions and angle annotations" loading="lazy" decoding="async" />
+          <figcaption>Dimensioned profile used to anchor the CAD model.</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="section split">
       <div>
-        <p class="eyebrow">Design approach</p>
-        <h2>Field-driven geometry and lightweight reinforcement.</h2>
-      </div>
-      <div class="stack">
-        <p>
-          The nozzle included an internal lattice-based regenerative cooling region built around a BCC lattice.
-          That approach increased surface area and helped support coolant interaction with the nozzle wall.
-        </p>
-        <p>
-          On the outside, an isogrid reinforcement structure improved stiffness and strength without forcing the
-          wall to become uniformly thick. Parametric fields in nTop let the rib thickness and width vary across
-          the nozzle, so the reinforcement could be tailored to the geometry and expected loading conditions.
-        </p>
-      </div>
-    </section>
-
-    <section class="section split">
-      <div>
-        <p class="eyebrow">Manufacturing</p>
-        <h2>Built as a single integrated metal part.</h2>
+        <p class="eyebrow">Materials and process</p>
+        <h2>Built as a single integrated Ti-6Al-4V part.</h2>
       </div>
       <div class="stack">
         <p>
@@ -129,38 +158,27 @@
 
     <section class="section split">
       <div>
-        <p class="eyebrow">Skills</p>
+        <p class="eyebrow">Takeaway</p>
         <h2>What this project demonstrates.</h2>
       </div>
       <div class="stack">
         <p>
           nTop / nTopology, metal additive manufacturing, design for additive manufacturing, regenerative
-          cooling, lattice structures, isogrid structures, parametric modeling, and propulsion hardware design.
+          cooling, lattice structures, isogrid structures, parametric modeling, propulsion hardware design, mesh
+          sensitivity studies, printability analysis, and simulation-driven iteration.
         </p>
         <p>
-          This project combines aerodynamic/thermal thinking with lightweight structural design and practical
-          manufacturing constraints.
+          The project combines aerodynamic and thermal thinking with lightweight structural design and practical
+          manufacturing constraints into one cohesive nozzle story.
         </p>
       </div>
     </section>
 
     <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">3D viewer</p>
-        <h2>Ready for a rotating CAD model later.</h2>
-      </div>
       <div class="report-grid">
         <div class="report-links">
           <a class="button-link" href="projects.html">Back to projects</a>
           <a class="button-link" href="contact.html">Contact me</a>
-        </div>
-        <div class="resume-frame" style="display:grid;place-items:center;min-height:260px;background:#fcfcfc;text-align:center;padding:28px;">
-          <div>
-            <h3 style="margin:0 0 8px;">3D model placeholder</h3>
-            <p style="margin:0;color:#666;">
-              When you have a web-friendly CAD export, this can become a rotating interactive viewer.
-            </p>
-          </div>
         </div>
       </div>
     </section>
