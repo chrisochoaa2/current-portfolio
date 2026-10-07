@@ -20,7 +20,7 @@ The Design Build Fly project now lives on its own page at `dbf.html` with:
 
 - one featured project image on the projects page
 - a full project summary
-- the design report PDF
+- the project PDF
 - all project photos
 - project videos
 

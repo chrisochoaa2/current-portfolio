@@ -29,7 +29,7 @@
         <p class="eyebrow">Rocket propulsion • additive manufacturing</p>
         <h1 class="page-title">Additively Manufactured Regeneratively Cooled Rocket Nozzle</h1>
         <p class="section-intro">
-          This project explored lattice structures in a regeneratively cooled rocket nozzle manufactured with metal additive manufacturing.
+          An additively manufactured nozzle concept that replaces conventional rectangular passages with BCC lattice cooling channels, aiming for a single-build cooling structure with better heat transfer.
         </p>
       </div>
       <figure class="detail-hero-image-wrap project-hero-image-wrap">
@@ -47,7 +47,7 @@
         <div class="fact-card"><span class="fact-label">Reinforcement</span><span class="fact-value">Field-driven isogrid with varying rib thickness and width</span></div>
         <div class="fact-card"><span class="fact-label">Material</span><span class="fact-value">Ti-6Al-4V</span></div>
         <div class="fact-card"><span class="fact-label">Process</span><span class="fact-value">Laser powder bed fusion metal additive manufacturing</span></div>
-        <div class="fact-card"><span class="fact-label">Printer</span><span class="fact-value">GE M2 Series</span></div>
+        <div class="fact-card"><span class="fact-label">Tradeoff</span><span class="fact-value">Improved heat transfer, but higher pressure drop through the cooling channels</span></div>
       </div>
     </section>
 
@@ -62,13 +62,29 @@
           <figcaption>Conventional nozzle with rectangular cooling channels.</figcaption>
         </figure>
         <figure class="media-card">
-          <img src="images/nozzle/nozzle-wireframe-lattice.png" alt="Abstract gray wireframe hourglass-shaped lattice on a black background" loading="lazy" decoding="async" />
+          <img src="images/nozzle/nozzle-bcc-core.png" alt="Stylized BCC lattice cooling core supporting the redesigned nozzle structure" loading="lazy" decoding="async" />
           <figcaption>BCC lattice cooling core used in the redesigned nozzle.</figcaption>
         </figure>
       </div>
       <p class="section-intro">
-        The report shows that BCC lattices improve heat transfer and distribute load more evenly, which helps reduce damage to the inner wall. That makes the lattice approach a strong additive option, even with the pressure-drop tradeoff.
+        I found that BCC lattices can lower wall temperature and stress by improving heat transfer and spreading load more evenly. In my study, thicker lattice rods reduced temperature, stress, and strain, while pressure drop increased — the core design tradeoff.
       </p>
+    </section>
+
+    <section class="section split">
+      <div>
+        <p class="eyebrow">Research foundation</p>
+        <h2>I started this project with UReCA-funded research, then grew it into a full nozzle build.</h2>
+      </div>
+      <div class="stack">
+        <p>
+          I developed this nozzle project in two parts. The first phase was funded research through UReCA, where I studied lattice cooling structures as an additive-manufacturing-only alternative to conventional cooling channels.
+        </p>
+        <p>
+          I then took that research forward by modeling the full nozzle and manufacturing it at the Sooner Advanced Manufacturing Lab.
+        </p>
+        <a class="button-link" href="docs/UReCA_research_presentation.pdf">Open the research presentation</a>
+      </div>
     </section>
 
     <section class="section split">
@@ -100,7 +116,7 @@
         <p class="eyebrow">3. Build process simulation</p>
         <h2>The simulation checks printability before the nozzle is built.</h2>
         <p>
-          This is a build-process simulation, not a service-load FEA. In LPBF, geometry, overhangs, thermal effects,
+          I used a build-process simulation, not a service-load FEA. In LPBF, geometry, overhangs, thermal effects,
           residual stress, and distortion can all create print failure risk. The P integral helps assess that risk by
           relating the local von Mises stress field to the surrounding area and volume, making it easier to spot regions that
           may warp, crack, separate from the build plate, or fail during the build.
@@ -109,6 +125,26 @@
           For this nozzle, the results looked acceptable and supported moving the design forward to manufacturing.
         </p>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Results</p>
+        <h2>Thermal, structural, and flow results show the design tradeoff.</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="media-card">
+          <img src="images/nozzle/nozzle-results-collage.png" alt="Four-panel ANSYS results collage showing thermal, stress, and velocity streamline visualizations for the lattice nozzle structure" loading="lazy" decoding="async" />
+          <figcaption>Thermal, structural, and flow simulations for the lattice-supported nozzle segment.</figcaption>
+        </figure>
+        <figure class="media-card">
+          <img src="images/nozzle/nozzle-results-table.png" alt="Results table comparing rectangular and lattice nozzle designs by maximum temperature, stress, strain, and pressure drop" loading="lazy" decoding="async" />
+          <figcaption>Design comparison summary across temperature, stress, strain, and pressure drop.</figcaption>
+        </figure>
+      </div>
+      <p class="section-intro">
+        My simulations and comparison table reinforce the same pattern: lattice designs can improve cooling performance and reduce thermal loading, but the pressure-drop penalty grows quickly as the geometry becomes more aggressive.
+      </p>
     </section>
 
     <section class="section">
@@ -163,13 +199,10 @@
       </div>
       <div class="stack">
         <p>
-          nTop / nTopology, metal additive manufacturing, design for additive manufacturing, regenerative
-          cooling, lattice structures, isogrid structures, parametric modeling, propulsion hardware design, mesh
-          sensitivity studies, printability analysis, and simulation-driven iteration.
+          I combined additive manufacturing, lattice cooling design, field-driven structural reinforcement, and printability analysis into one nozzle concept.
         </p>
         <p>
-          The project combines aerodynamic and thermal thinking with lightweight structural design and practical
-          manufacturing constraints into one cohesive nozzle story.
+          In short: it shows how a nozzle can be redesigned around a single-build cooling architecture that improves thermal performance, but still has to manage the pressure-drop penalty.
         </p>
       </div>
     </section>
