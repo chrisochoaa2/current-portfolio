@@ -399,6 +399,13 @@ h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -0.04em; }
   .small-project-card--wide { grid-column: auto; }
 }
 
+/* Inline video player inside gallery cards */
+.small-project-video-wrap { width: 100%; height: 100%; }
+.small-project-video { width: 100%; height: 100%; border: 0; display: block; }
+
+/* For accessibility: ensure iframe scales inside the grid cell */
+.small-project-media { align-items: stretch; }
+
 .small-project-card {
   border: 1px solid var(--line);
   border-radius: 18px;
