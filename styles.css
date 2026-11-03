@@ -723,3 +723,22 @@ h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -0.04em; }
   .gallery-columns { column-count: 1; }
   .footer { flex-direction: column; gap: 8px; }
 }
+
+@media (min-width: 901px) {
+  .small-project-card--full {
+    grid-column: 1 / -1;
+  }
+
+  .small-project-card--wide .small-project-media {
+    min-height: 0;
+  }
+
+  .small-project-card--wide .small-project-media img {
+    height: auto;
+  }
+
+  .small-project-video-wrap {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
