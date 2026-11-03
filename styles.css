@@ -377,6 +377,28 @@ h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -0.04em; }
   gap: 14px;
 }
 
+/* Make select gallery cards wider so key images are more visible */
+.small-project-card--wide {
+  grid-column: span 2;
+}
+
+/* Larger media area for wide cards */
+.small-project-card--wide .small-project-media {
+  min-height: 360px;
+}
+
+/* Ensure wide card images fill available height while preserving aspect */
+.small-project-card--wide .small-project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  /* On narrower screens, stop spanning so layout remains balanced */
+  .small-project-card--wide { grid-column: auto; }
+}
+
 .small-project-card {
   border: 1px solid var(--line);
   border-radius: 18px;
