@@ -340,6 +340,13 @@ h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -0.04em; }
   min-height: 260px;
   object-fit: cover;
 }
+.featured-project .project-card-image {
+  height: clamp(260px, 32vw, 380px);
+  object-fit: contain;
+}
+.featured-project .project-card-body {
+  align-content: center;
+}
 .project-card-preview {
   display: grid;
   place-items: center;
